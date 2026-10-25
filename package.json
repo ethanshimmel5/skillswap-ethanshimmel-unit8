@@ -1,0 +1,23 @@
+{
+  "name": "skillswap-ethanshimmel-unit8",
+  "version": "1.0.0",
+  "description": "Skill Swap is a student-focused website where people are able to share their skills, discover new things to learn, and connect with others who are looking to teach or learn.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethanshimmel5/skillswap-ethanshimmel-unit8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethanshimmel5/skillswap-ethanshimmel-unit8/issues"
+  },
+  "homepage": "https://github.com/ethanshimmel5/skillswap-ethanshimmel-unit8#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}

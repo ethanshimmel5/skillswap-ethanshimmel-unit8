@@ -107,20 +107,7 @@ footer p {
     margin: 0;
 }
 
-@media (max-width: 600px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
-        gap: 12px;
-    }
-
-    .hero {
-        padding: 50px 0;
-    }
-}
+/* Skill card integration */
 
 .skill-grid {
     display: grid;
@@ -161,4 +148,85 @@ footer p {
     margin-top: 14px;
     padding-top: 12px;
     border-top: 1px solid #dce3ed
+}
+
+.skill-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.filter-button {
+    padding: 10px 16px;
+    border: 1px solid #dce3ed;
+    border-radius: 6px;
+    background: white;
+    color: #183153;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-button.active,
+.filter-button:hover,
+.filter-button:focus-visible {
+    background: #2459a9;
+    color: white;
+}
+
+.tools-section {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.tools-section form {
+    display: grid;
+    gap: 10px;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.tools-section input,
+.tools-section select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dce3ed;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.tools-section button {
+    cursor: pointer;
+}
+
+#cost-result,
+#match-results {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#match-results p {
+    padding: 12px;
+    background: white;
+    border: 1px solid #dce3ed;
+    border-radius: 6px;
+}
+
+.skill-card[hidden] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
 }

@@ -15,6 +15,8 @@
             <nav aria-label="Main Navigation">
                 <a href="#home">Home</a>
                 <a href="#skills">Browse Skills</a>
+                <a href="#cost-calculator">Session Cost Calculator</a>
+                <a href="#find-match">Match Skills</a>
                 <a href="#offer">Offer Skills</a>
                 <a href="#about">About</a>
             </nav>
@@ -40,8 +42,17 @@
                 Discover opportunities to learn from
                 other students.
             </p>
+            <div class="skill-filters" aria-label="Filter skills by category">
+                <button type="button" class="filter-button active" data-category="All">All</button>
+                <button type="button" class="filter-button" data-category="Technology">Technology</button>
+                <button type="button" class="filter-button" data-category="Creative">Creative</button>
+                <button type="button" class="filter-button" data-category="Business">Business</button>
+                <button type="button" class="filter-button" data-category="Communication">Communication</button>
+            </div>
+
+            <p id="filter-status" aria-live="polite">Showing all skills.</p>
             <div class="skill-grid">
-                <article class="skill-card">
+                <article class="skill-card" data-category="Technology" data-price="15">
                     <h3>Web Development</h3>
                     <p>Learn the basics of building websites with HTML and CSS.</p>
                     <p><strong>Price:</strong> $15 per session</p>
@@ -56,7 +67,7 @@
                     </p>
                 </article>
 
-                <article class="skill-card">
+                <article class="skill-card" data-category="Creative" data-price="10">
                     <h3>Photography</h3>
                     <p>Practice composition, lighting, and taking better photos.</p>
                     <p><strong>Price:</strong> $10 per session</p>
@@ -71,7 +82,7 @@
                     </p>
                 </article>
 
-                <article class="skill-card">
+                <article class="skill-card" data-category="Business" data-price="12">
                     <h3>Excel Basics</h3>
                     <p>Learn spreadsheets, formulas, and basic data organization.</p>
                     <p><strong>Price:</strong> $12 per session</p>
@@ -86,7 +97,7 @@
                     </p>
                 </article>
 
-                <article class="skill-card">
+                <article class="skill-card" data-category="Communication" data-price="8">
                     <h3>Public Speaking</h3>
                     <p>Build confidence and improve presentation skills.</p>
                     <p><strong>Price:</strong> $8 per session</p>
@@ -102,6 +113,47 @@
                 </article>
             </div>
 
+        </section>
+
+        <section class="tools-section container" id="cost-calculator">
+            <h2>Session Cost Calculator</h2>
+            <p>Calculate the total cost of a skill session.</p>
+
+            <form id="cost-form">
+                <label for="hourly-rate">Hourly rate ($)</label>
+                <input type="number" id="hourly-rate" min="0" step="0.01" value="15" required>
+
+                <label for="session-hours">Session length (hours)</label>
+                <input type="number" id="session-hours" min="0" step="0.25" value="1" required>
+
+                <button class="button" type="submit">Calculate Cost</button>
+            </form>
+
+            <p id="cost-result" aria-live="polite">Total cost: $15.00</p>
+        </section>
+
+        <section class="tools-section container" id="find-match">
+            <h2>Find My Match</h2>
+            <p>Find skills that match your interests and budget.</p>
+
+            <form id="match-form">
+                <label for="needed-category">What do you want to learn?</label>
+                <select id="needed-category" required>
+                    <option value="Technology">Technology</option>
+                    <option value="Creative">Creative</option>
+                    <option value="Business">Business</option>
+                    <option value="Communication">Communication</option>
+                </select>
+
+                <label for="max-price">Maximum price per session ($)</label>
+                <input type="number" id="max-price" min="0" step="0.01" value="12" required>
+
+                <button class="button" type="submit">Find My Match</button>
+            </form>
+
+            <div id="match-results" aria-live="polite">
+                Choose a category and budget to find a match.
+            </div>
         </section>
 
         <section class="offer-sections container" id="offer">
@@ -129,6 +181,7 @@
             </p>
         </div>
     </footer>
+    <script src="skillswap-functions.js"></script>
     <script src="script.js"></script>
 </body>
 

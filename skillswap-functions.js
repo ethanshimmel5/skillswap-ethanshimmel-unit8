@@ -1,24 +1,33 @@
-function filterSkillsByCategory(skills, category) {
-    if (category === 'All') {
-        return skills;
+const SkillSwapFunctions = {
+
+
+    filterSkillsByCategory(skills, category) {
+        if (category === 'All') {
+            return skills;
+        }
+
+        return skills.filter(skill => skill.category === category);
+    },
+
+    calculateTotalCost(hourlyRate, hours) {
+        return hourlyRate * hours;
+    },
+
+    matchSkillsToUser(userNeeds, skills) {
+        return skills.filter(skill =>
+            skill.category === userNeeds.category &&
+            skill.price <= userNeeds.maxPrice
+        );
     }
 
-    return skills.filter(skill => skill.category === category);
 }
 
-function calculateTotalCost(hourlyRate, hours) {
-    return hourlyRate * hours;
+// Make functions available to the browser
+if (typeof window !== "undefined") {
+    window.SkillSwapFunctions = SkillSwapFunctions;
 }
 
-function matchSkillsToUser(userNeeds, skills) {
-    return skills.filter(skill =>
-        skill.category === userNeeds.category &&
-        skill.price <= userNeeds.maxPrice
-    );
+// Keep functions available to Jest
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = SkillSwapFunctions;
 }
-
-module.exports = {
-    filterSkillsByCategory,
-    calculateTotalCost,
-    matchSkillsToUser
-};
